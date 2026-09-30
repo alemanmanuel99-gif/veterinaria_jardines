@@ -1,0 +1,337 @@
+.schedule {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  background-color: var(--color-surface-container-low);
+}
+
+.schedule__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 42rem;
+  margin-bottom: var(--space-xl);
+}
+
+.schedule__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.schedule__eyebrow-bar {
+  width: 32px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+}
+
+.schedule__eyebrow-label {
+  font-size: var(--fs-label-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.schedule__title {
+  font-size: var(--fs-headline-lg-mobile);
+  color: var(--color-primary);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.schedule__subtitle {
+  font-size: var(--fs-body-md);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.schedule__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+/* Schedule card */
+.schedule-card,
+.location-card {
+  padding: var(--space-lg);
+  border-radius: 1.5rem;
+  background-color: var(--color-surface-container-lowest);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.schedule-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.schedule-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: rgba(0, 104, 95, 0.1);
+  color: var(--color-primary);
+}
+
+.schedule-card__pill {
+  font-size: var(--fs-label-sm);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-secondary-container);
+  color: #002116;
+}
+
+.schedule-card__heading {
+  font-size: var(--fs-headline-sm);
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.schedule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-surface-container);
+}
+
+.schedule-list__item:last-child {
+  border-bottom: none;
+}
+
+.schedule-list__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-label-lg);
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.schedule-list__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+}
+
+.schedule-list__hours {
+  font-size: var(--fs-body-md);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.schedule-card__note {
+  padding: 16px;
+  border-radius: 1rem;
+  background-color: var(--color-surface-container-low);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.schedule-card__note-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-label-md);
+  font-weight: 700;
+  color: var(--color-tertiary);
+}
+
+.schedule-card__note p {
+  font-size: var(--fs-body-sm);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.schedule-card__phone {
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-surface-container);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.schedule-card__phone span:first-child {
+  font-size: var(--fs-label-sm);
+  color: var(--color-outline);
+}
+
+.schedule-card__phone a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-headline-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.schedule-card__phone a:hover {
+  text-decoration: underline;
+}
+
+/* Location card */
+.location-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.location-card__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-label-md);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.location-card__address {
+  font-size: var(--fs-headline-sm);
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.location-card__address-detail {
+  font-size: var(--fs-body-sm);
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.location-map {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: 1rem;
+  background-color: var(--color-surface-container);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.location-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 104, 95, 0.3), transparent);
+}
+
+.location-map__pin {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.location-map__pin-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-tertiary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.location-map__pin-label {
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+  font-size: var(--fs-label-sm);
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.location-map__footer {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  font-size: var(--fs-body-sm);
+  color: var(--color-on-surface);
+}
+
+.location-card__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.location-card__parking {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-body-sm);
+  color: var(--color-on-surface-variant);
+}
+
+.location-card__parking .material-symbols-outlined {
+  color: var(--color-secondary);
+}
+
+.location-card__maps-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: var(--fs-label-md);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.2s;
+}
+
+.location-card__maps-btn:hover {
+  background-color: var(--color-primary-container);
+}
+
+@media (min-width: 1024px) {
+  .schedule__grid {
+    grid-template-columns: 5fr 7fr;
+  }
+
+  .location-card__bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

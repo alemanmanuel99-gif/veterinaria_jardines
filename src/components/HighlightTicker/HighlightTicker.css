@@ -1,0 +1,26 @@
+.ticker {
+  width: 100%;
+  background-color: var(--color-surface-container);
+  padding: 12px 0;
+}
+
+.ticker__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 16px;
+  color: var(--color-on-surface-variant);
+  font-size: var(--fs-label-md);
+}
+
+.ticker__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ticker__icon {
+  font-size: 18px;
+  color: var(--color-primary);
+}
