@@ -3,8 +3,8 @@ import './HighlightTicker.css';
 const highlights = [
   { icon: 'favorite', label: 'Trato amoroso y sin coerción' },
   { icon: 'medical_services', label: 'Quirófano totalmente equipado' },
-  { icon: 'vaccines', label: 'Vacunas con carnet certificado' },
-  { icon: 'hotel', label: 'Hotel canino y felino con reportes' },
+  { icon: 'vaccines', label: 'Vacunas certificadas' },
+  { icon: 'pets', label: 'Hotel y guarderia de mascotas' },
 ];
 
 function HighlightTicker() {

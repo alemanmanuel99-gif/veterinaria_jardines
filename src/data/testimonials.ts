@@ -3,29 +3,29 @@ import type { Testimonial } from '../types';
 export const testimonials: Testimonial[] = [
   {
     id: 't1',
-    initials: 'SM',
-    authorName: 'Sofía M.',
-    petInfo: "Dueña de 'Bruno' (Golden Retriever)",
+    initials: 'JF',
+    authorName: 'Johanna Ferreira',
+    petInfo: "Mamá felina",
     quote:
-      'La mejor veterinaria de la zona. Se nota el amor genuino que le tienen a los animales. Bruno entra feliz y sin miedo, los doctores tienen una paciencia infinita.',
+      'Llevé a mi gato porque llevaba varios días sintiéndose mal y desde que llegamos nos trataron excelente. Todo el personal fue muy amable, paciente y se nota que realmente aman a los animales.',
     rating: 5,
   },
   {
     id: 't2',
-    initials: 'CR',
-    authorName: 'Carlos R.',
-    petInfo: "Dueño de 'Mimi' (Gata Persa)",
+    initials: 'AC',
+    authorName: 'Alex Camarillo',
+    petInfo: "Papá felino",
     quote:
-      'Excelente atención en urgencias cuando Mimi se enfermó. Muy atentos, instalaciones impecables y nos mantuvieron informados a cada hora por WhatsApp. Salvavidas totales.',
+      'Excelente atención y trato hacia las mascotas. El personal es muy amable, profesional y siempre explica todo de manera clara. Se nota el amor y compromiso que tienen con los animales.',
     rating: 5,
   },
   {
     id: 't3',
-    initials: 'VG',
-    authorName: 'Dra. Valeria G.',
-    petInfo: "Dueña de 'Rocky y Coco'",
+    initials: 'AG',
+    authorName: 'Adriana Gomez',
+    petInfo: "Mamá de Bimba (Bulldog Francés)",
     quote:
-      'Llevo a mis dos perritos a estética y vacunas. El trato es sumamente humano y los precios son muy justos y claros. No intentan venderte cosas innecesarias.',
+      'Estoy profundamente agradecida por el amor, la dedicación y el compromiso con el que trabajan. En un momento tan importante para mí, me hicieron sentir acompañada y en paz, sabiendo que Bimba estaba en las mejores manos.',
     rating: 5,
   },
 ];

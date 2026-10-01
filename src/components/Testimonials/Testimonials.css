@@ -65,6 +65,12 @@
   gap: 2px;
   color: var(--color-tertiary);
   margin-bottom: 12px;
+  /* Solución robusta para forzar el relleno en Material Symbols */
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
 }
 
 .testimonial-card__stars .material-symbols-outlined {

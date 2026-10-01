@@ -49,7 +49,7 @@ function Hero() {
 
           <div className="hero__stats">
             <div className="hero__stat">
-              <span className="hero__stat-number">+12</span>
+              <span className="hero__stat-number">+3</span>
               <span className="hero__stat-label">Años de experiencia</span>
             </div>
             <div className="hero__stat">
@@ -57,7 +57,7 @@ function Hero() {
               <span className="hero__stat-label">Vocación y amor</span>
             </div>
             <div className="hero__stat">
-              <span className="hero__stat-number hero__stat-number--accent">24/7</span>
+              <span className="hero__stat-number hero__stat-number--accent">Los 7 dias</span>
               <span className="hero__stat-label">Urgencias clínicas</span>
             </div>
           </div>
@@ -66,7 +66,7 @@ function Hero() {
         <div className="hero__visual">
           <div className="hero__image-wrapper">
             <img
-              src="../../public/assets/hero-consulta.png"
+              src="../../assets/hero-consulta.png"
               alt="Consulta compasiva en Veterinaria Jardines Guadalajara"
               className="hero__image"
             />

@@ -14,10 +14,10 @@ function AnnouncementBar() {
         </div>
 
         <div className="announcement__contact">
-          <a href={`tel:${contactInfo.phone}`} className="announcement__phone">
-            <span className="material-symbols-outlined">call</span>
-            {contactInfo.phoneDisplay}
-          </a>
+          <a href={`tel:${contactInfo.landlinePhone}`} className="announcement__phone">
+  <span className="material-symbols-outlined">call</span>
+  {contactInfo.landlinePhoneDisplay}
+</a>
           <span className="announcement__divider">|</span>
           <span className="announcement__address">{contactInfo.addressShort}</span>
         </div>

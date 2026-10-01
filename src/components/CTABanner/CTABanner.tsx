@@ -27,10 +27,10 @@ function CTABanner() {
             <span className="material-symbols-outlined">chat</span>
             <span>Escribir por WhatsApp</span>
           </a>
-          <a href={`tel:${contactInfo.phone}`} className="cta-banner__btn cta-banner__btn--call">
-            <span className="material-symbols-outlined">call</span>
-            <span>Llamar al {contactInfo.phoneDisplay}</span>
-          </a>
+          <a href={`tel:${contactInfo.landlinePhone}`} className="cta-banner__btn cta-banner__btn--call">
+  <span className="material-symbols-outlined">call</span>
+  <span>Llamar al {contactInfo.landlinePhoneDisplay}</span>
+</a>
         </div>
       </div>
     </section>

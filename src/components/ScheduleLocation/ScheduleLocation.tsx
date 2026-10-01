@@ -2,8 +2,8 @@ import { schedule, contactInfo } from '../../data/contact';
 import './ScheduleLocation.css';
 
 function ScheduleLocation() {
-  const mapsQuery = encodeURIComponent(contactInfo.address);
-  const mapsUrl = `https://maps.google.com/?q=${mapsQuery}`;
+ const mapsQuery = encodeURIComponent(`Veterinaria Jardines, ${contactInfo.address}`);
+const mapsUrl = `https://maps.google.com/?q=${mapsQuery}`;
 
   return (
     <section className="schedule" id="horarios">
@@ -13,10 +13,10 @@ function ScheduleLocation() {
             <span className="schedule__eyebrow-bar" />
             <span className="schedule__eyebrow-label">Horarios &amp; Ubicación</span>
           </div>
-          <h2 className="schedule__title">Encuéntranos en Guadalajara</h2>
+          <h2 className="schedule__title">Visita nuestro consultorio</h2>
           <p className="schedule__subtitle">
             Estamos ubicados de manera céntrica en Jardines de Los Historiadores, con fácil
-            acceso desde avenidas principales y estacionamiento al frente.
+            acceso desde avenidas principales.
           </p>
         </div>
 
@@ -56,12 +56,12 @@ function ScheduleLocation() {
             </div>
 
             <div className="schedule-card__phone">
-              <span>Línea telefónica directa clínica:</span>
-              <a href={`tel:${contactInfo.phone}`}>
-                <span className="material-symbols-outlined">call</span>
-                {contactInfo.phoneDisplay}
-              </a>
-            </div>
+  <span>Línea telefónica directa clínica:</span>
+  <a href={`tel:${contactInfo.landlinePhone}`}>
+    <span className="material-symbols-outlined">call</span>
+    {contactInfo.landlinePhoneDisplay}
+  </a>
+</div>
           </div>
 
           {/* Card de ubicación */}
@@ -78,21 +78,20 @@ function ScheduleLocation() {
             </div>
 
             <div className="location-map">
-              <div className="location-map__pin">
-                <span className="location-map__pin-icon material-symbols-outlined">pets</span>
-                <span className="location-map__pin-label">Veterinaria Jardines</span>
-              </div>
-              <div className="location-map__footer">
-                <span>A 2 cuadras de Av. Historiadores • Fácil estacionamiento</span>
-                <span className="material-symbols-outlined">navigation</span>
-              </div>
-            </div>
+  <iframe
+    src={`https://www.google.com/maps?q=${mapsQuery}&output=embed`}
+    title="Ubicación de Veterinaria Jardines en Google Maps"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="location-map__iframe"
+  />
+</div>
 
             <div className="location-card__bottom">
-              <span className="location-card__parking">
+             {/*} <span className="location-card__parking">
                 <span className="material-symbols-outlined">local_parking</span>
                 Lugar disponible para tu automóvil al frente.
-              </span>
+              </span> */}
               <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="location-card__maps-btn">
                 <span className="material-symbols-outlined">map</span>
                 <span>Abrir en Google Maps / Cómo llegar</span>

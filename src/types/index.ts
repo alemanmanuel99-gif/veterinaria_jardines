@@ -35,8 +35,11 @@ export interface AppointmentFormData {
 export interface ContactInfo {
   phone: string;
   phoneDisplay: string;
+  landlinePhone: string;
+  landlinePhoneDisplay: string;
   whatsappBase: string;
   address: string;
   addressShort: string;
   instagram: string;
+  facebook: string;
 }

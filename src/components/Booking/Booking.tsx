@@ -14,14 +14,28 @@ const initialFormState: AppointmentFormData = {
 
 function Booking() {
   const [formData, setFormData] = useState<AppointmentFormData>(initialFormState);
-  const [submitted, setSubmitted] = useState(false);
-
+const [submitted, setSubmitted] = useState(false);
+const [dateError, setDateError] = useState('');
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) {
-    const { id, value } = e.target;
-    setFormData((prev) => ({ ...prev, [id]: value }));
+  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+) {
+  const { id, value } = e.target;
+
+  if (id === 'prefDate' && value) {
+    // getDay() devuelve 0 para domingo
+    // Se agrega T00:00:00 para evitar desfases de zona horaria al parsear el string de fecha
+    const selectedDay = new Date(`${value}T00:00:00`).getDay();
+
+    if (selectedDay === 0) {
+      setDateError('Las citas no estan disponibles en Domingo. Por favor elige otro día.');
+      setFormData((prev) => ({ ...prev, prefDate: '' }));
+      return;
+    }
   }
+
+  setDateError('');
+  setFormData((prev) => ({ ...prev, [id]: value }));
+}
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -39,10 +53,10 @@ function Booking() {
       <div className="container">
         <div className="booking__intro">
           <span className="booking__eyebrow">Citas &amp; Consultas</span>
-          <h2 className="booking__title">Programa la visita de tu compañero</h2>
+          <h2 className="booking__title">Programa la visita de tu mascota</h2>
           <p className="booking__subtitle">
             Elige entre llenar nuestro formulario de registro previo o escribirnos directo vía
-            WhatsApp para confirmación rápida en menos de 15 minutos.
+            WhatsApp para confirmación rápida.
           </p>
         </div>
 
@@ -108,33 +122,41 @@ function Booking() {
                     <option value="" disabled>
                       Selecciona una opción...
                     </option>
-                    <option value="consulta">Consulta General y Diagnóstico</option>
-                    <option value="vacunacion">Vacunación y Desparasitación</option>
-                    <option value="cirugia">Valoración Quirúrgica / Esterilización</option>
-                    <option value="estetica">Estética y Spa Canino / Felino</option>
-                    <option value="hospitalizacion">Hospitalización y Cuidados</option>
-                    <option value="urgencias">Urgencia Médica (Inmediata)</option>
-                    <option value="hotel">Hospedaje en Hotel para Mascotas</option>
+                    <option value="consulta">Esterilización y Cirugía</option>
+                    <option value="vacunacion">Hotel y Guardería Veterinaria</option>
+                    <option value="cirugia">Interconsultas Especializadas</option>
+                    <option value="estetica">Estudios Radiográficos (Rayos X)</option>
+                    <option value="estetica">Consulta general</option>
+              
                   </select>
                 </div>
               </div>
 
               <div className="booking-form__row">
                 <div className="booking-form__field">
-                  <label htmlFor="prefDate">Fecha preferida</label>
-                  <input
-                    id="prefDate"
-                    type="date"
-                    value={formData.prefDate}
-                    onChange={handleChange}
-                  />
-                </div>
+  <label htmlFor="prefDate">Fecha preferida</label>
+  <input
+    id="prefDate"
+    type="date"
+    value={formData.prefDate}
+    onChange={handleChange}
+    className={dateError ? 'booking-form__field--error' : ''}
+  />
+  {dateError && <span className="booking-form__field-error">{dateError}</span>}
+</div>
                 <div className="booking-form__field">
                   <label htmlFor="prefTime">Horario preferido</label>
                   <select id="prefTime" value={formData.prefTime} onChange={handleChange}>
-                    <option value="manana">Mañana (10:00 AM - 1:00 PM)</option>
-                    <option value="tarde">Mediodía / Tarde (1:00 PM - 5:00 PM)</option>
-                    <option value="noche">Vespertino (5:00 PM - 8:00 PM)</option>
+                    <option value="noche">11:00 am</option>
+                    <option value="noche">12:00 pm</option>
+                    <option value="noche">1:00 pm</option>
+                    <option value="noche">2:00 pm</option>
+                    <option value="noche">3:00 pm</option>
+                    <option value="noche">4:00 pm</option>
+                    <option value="noche">5:00 pm</option>
+                    <option value="noche">6:00 pm</option>
+                    <option value="noche">7:00 pm</option>
+                    
                   </select>
                 </div>
               </div>
@@ -177,7 +199,7 @@ function Booking() {
                 <div className="whatsapp-card__response-time">
                   <span className="material-symbols-outlined">alarm_on</span>
                   <span>
-                    Tiempo promedio de respuesta: <strong>&lt; 15 min</strong>
+                    Tiempo promedio de respuesta: <strong>&lt; 1 - 2 horas</strong>
                   </span>
                 </div>
               </div>

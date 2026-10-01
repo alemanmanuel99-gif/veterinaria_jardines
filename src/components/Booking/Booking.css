@@ -302,3 +302,13 @@
     grid-template-columns: 7fr 5fr;
   }
 }
+
+.booking-form__field--error {
+  box-shadow: 0 0 0 2px var(--color-error);
+}
+
+.booking-form__field-error {
+  font-size: var(--fs-label-sm);
+  color: var(--color-error);
+  margin-top: 2px;
+}

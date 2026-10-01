@@ -6,7 +6,7 @@ const navLinks = [
   { path: 'nosotros', label: 'Nosotros', href: '#nosotros' },
   { path: 'servicios', label: 'Servicios', href: '#servicios' },
   { path: 'horarios', label: 'Horarios', href: '#horarios' },
-  { path: 'contacto', label: 'Contacto', href: '#contacto' },
+  { path: 'testimonios', label: 'Testimonios', href: '#testimonios' },
 ];
 
 function Header() {
@@ -15,7 +15,7 @@ function Header() {
       <div className="header__inner container">
         <a href="#hero" className="header__brand">
           <img
-            src="../../public/assets/logo.png"
+            src="../../assets/logo.png"
             alt="Logotipo Veterinaria Jardines"
             className="header__logo"
           />
@@ -33,12 +33,12 @@ function Header() {
         </nav>
 
         <div className="header__actions">
-          <a href={`tel:${contactInfo.phone}`} className="header__call">
-            <span className="material-symbols-outlined">call</span>
-            <span>
-              Llamar: <strong>{contactInfo.phoneDisplay}</strong>
-            </span>
-          </a>
+          <a href={`tel:${contactInfo.landlinePhone}`} className="header__call">
+  <span className="material-symbols-outlined">call</span>
+  <span>
+    Llamar: <strong>{contactInfo.landlinePhoneDisplay}</strong>
+  </span>
+</a>
           <a href="#agendar" className="header__cta">
             Agendar cita
           </a>

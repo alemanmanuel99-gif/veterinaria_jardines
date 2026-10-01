@@ -28,27 +28,27 @@ function About() {
         <div className="about__media">
           <div className="about__image-wrapper">
             <img
-              src="../../public/assets/equipo-medico.jpg"
+              src="../../assets/equipo-medico.jpg"
               alt="Equipo médico de Veterinaria Jardines Guadalajara"
               className="about__image"
             />
             <div className="about__image-overlay" />
             <div className="about__image-caption">
-              <span className="about__image-tag">Equipo Médico GDL</span>
+              <span className="about__image-tag">Equipo Médico</span>
               <p className="about__image-title">Dres. Especialistas y Asistentes</p>
               <p className="about__image-subtitle">
-                Compromiso ético con la salud integral de cada paciente.
+                Compromiso ético con la salud integral de tus mascotas.
               </p>
             </div>
           </div>
 
-          <div className="about__badge">
+          {/*<div className="about__badge">
             <span className="material-symbols-outlined">verified_user</span>
             <div className="about__badge-text">
               <span className="about__badge-title">Cédula Profesional</span>
-              <span className="about__badge-subtitle">Certificados Oficiales</span>
+              <span className="about__badge-subtitle">Certificado Oficial</span>
             </div>
-          </div>
+          </div>*/}
         </div>
 
         <div className="about__content">
@@ -61,19 +61,18 @@ function About() {
             Pasión y vocación por la salud animal en Guadalajara.
           </h2>
 
+<p className="about__text">
+            Veterinaria Jardines nació en el 2023 en Guadalajara como un proyecto familiar impulsado por la pasión hacia el cuidado animal. Empezamos desde cero, en un local rentado y con apenas tres personas, ofreciendo consultas básicas y estética. Hoy, tres años después, contamos con instalaciones propias, un equipo de 10 colaboradores, servicios de cirugía avanzada, hospitalización, hotel canino y atención a animales exóticos respaldados por una calificación de 4.7 estrellas y la confianza de cientos de familias en Guadalajara.
+          </p>
+
           <p className="about__text">
             En <strong>Veterinaria Jardines</strong> entendemos que tu mascota no es solo un
-            animal de compañía, sino un miembro vital de tu hogar. Fundada en Guadalajara con el
-            propósito de ofrecer una medicina veterinaria con rostro humano, combinamos
+            animal de compañía, sino un miembro vital de tu hogar. 
+            Nuestro propósito es ofrecer una medicina veterinaria con calor humano, combinamos
             tecnología médica moderna con una política de{' '}
             <span className="about__text-highlight">manejo gentil y bajo estrés</span>.
           </p>
 
-          <p className="about__text">
-            Nuestro equipo médico se capacita continuamente para proveer diagnósticos certeros,
-            planes terapéuticos honestos y acompañamiento empático tanto en chequeos preventivos
-            como en momentos de emergencia crítica.
-          </p>
 
           <div className="about__values">
             {values.map((value) => (
