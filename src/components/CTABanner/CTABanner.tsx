@@ -19,7 +19,7 @@ function CTABanner() {
 
         <div className="cta-banner__actions">
           <a
-            href={buildWhatsappLink('Hola Veterinaria Jardines, tengo una duda sobre mi mascota')}
+            href={buildWhatsappLink('Hola Veterinaria Jardines, tengo una consulta sobre mi mascota')}
             target="_blank"
             rel="noopener noreferrer"
             className="cta-banner__btn cta-banner__btn--whatsapp"
