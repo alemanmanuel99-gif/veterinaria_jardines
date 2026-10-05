@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { contactInfo } from '../../data/contact';
 import './Header.css';
 
@@ -10,18 +11,22 @@ const navLinks = [
 ];
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
+
   return (
     <header className="header">
       <div className="header__inner container">
-        <a href="#hero" className="header__brand">
+        <a href="#hero" className="header__brand" onClick={closeMenu}>
           <img
-            src="../../assets/logo.png"
+            src="/assets/logo.png"
             alt="Logotipo Veterinaria Jardines"
             className="header__logo"
           />
-          <div className="header__brand-text">
-            <span className="header__brand-tag">Atención Integral • GDL</span>
-          </div>
+          <span className="header__brand-tag">Atención Integral • GDL</span>
         </a>
 
         <nav className="header__nav">
@@ -34,16 +39,60 @@ function Header() {
 
         <div className="header__actions">
           <a href={`tel:${contactInfo.landlinePhone}`} className="header__call">
-  <span className="material-symbols-outlined">call</span>
-  <span>
-    Llamar: <strong>{contactInfo.landlinePhoneDisplay}</strong>
-  </span>
-</a>
+            <span className="material-symbols-outlined">call</span>
+            <span>
+              Llamar: <strong>{contactInfo.landlinePhoneDisplay}</strong>
+            </span>
+          </a>
           <a href="#agendar" className="header__cta">
             Agendar cita
           </a>
+
+          <button
+            type="button"
+            className="header__menu-toggle"
+            aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            <span className="material-symbols-outlined">
+              {isMenuOpen ? 'close' : 'menu'}
+            </span>
+          </button>
         </div>
       </div>
+
+      {isMenuOpen && (
+        <div className="header__mobile-menu">
+          <nav className="header__mobile-nav">
+            {navLinks.map((link) => (
+              <a
+                key={link.path}
+                href={link.href}
+                className="header__mobile-link"
+                onClick={closeMenu}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="header__mobile-divider" />
+
+          <a
+            href={`tel:${contactInfo.landlinePhone}`}
+            className="header__mobile-call"
+            onClick={closeMenu}
+          >
+            <span className="material-symbols-outlined">call</span>
+            <span>Llamar: {contactInfo.landlinePhoneDisplay}</span>
+          </a>
+
+          <a href="#agendar" className="header__mobile-cta" onClick={closeMenu}>
+            Agendar cita
+          </a>
+        </div>
+      )}
     </header>
   );
 }
